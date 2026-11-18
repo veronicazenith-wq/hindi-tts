@@ -17,6 +17,9 @@ jobs:
       - name: Unpack app code
         run: unzip -o HindiTTS-code.zip
 
+      - name: Prepare
+        run: if [ -f ci/prepare.sh ]; then bash ci/prepare.sh; fi
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
